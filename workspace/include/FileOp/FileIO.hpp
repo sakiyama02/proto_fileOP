@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <sys/stat.h>
+#include <string>
 
 using namespace std;
 
