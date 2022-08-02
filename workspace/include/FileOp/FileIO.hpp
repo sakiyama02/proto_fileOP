@@ -6,15 +6,15 @@
 #pragma once
 
 #include <vector>
-#include <sys/stat.h>
-#include <string>
-
+#include <stdio.h>
+#include <stdlib.h>
 using namespace std;
 
 class FileIO{
 	private:
 
 	public:
-	int8_t read(vector<char>& destination,char* file_path);
+	char read(vector<char>& destination,char* file_path);
+	int getSize(char* file_path);
 	
 };
