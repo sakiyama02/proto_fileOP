@@ -33,4 +33,4 @@ INCLUDES +=\
 COPTS += -I$(ETROBO_HRP3_WORKSPACE)/etroboc_common
 COPTS += -DMAKE_EV3
 COPTS += -std=gnu++11
-
+COPTS += -fno-threadsafe-statics

@@ -1,11 +1,7 @@
 #pragma once
 
-
-
 #include <vector>
-
 #include <string.h>
-#include <stdio.h>
 #include <stdlib.h>
 
 #include "../FileOp/FileIO.hpp"
@@ -110,18 +106,24 @@ enum Pattern{
 
 class SceneInfo{
 	protected:
-	//SceneInfo(){};
+
 
 	private:
-
+		SceneInfo( ){};
+		~SceneInfo( ){};
+		SceneInfo( const SceneInfo &x );
+		SceneInfo&operator=( const SceneInfo & ) { return *this; };
 		vector<SceneData> timeAttackData;
 		vector<vector<SceneData> > slalomData{3};  // 0=共通,1=パターン1,2=パターン2
 		vector<vector<SceneData> > garageData{3};  // 0=共通,1=パターン1,2=パターン2
 		
 	public:
-		SceneInfo(){	
 
-		};
+		static SceneInfo &getInstance( )
+		{
+			static SceneInfo sceneInfo;
+			return sceneInfo;
+		}
 		char init();
 		char decode(vector<char>& fileData,vector<SceneData>& sceneData);
 		SceneData get(ScenarioType scenario,int scene,Pattern pattern);

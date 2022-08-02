@@ -69,7 +69,7 @@ void main_task(intptr_t unused)
 	// garage1.csv　パターン１
 	// garage2.csv　パターン２
 
-	SceneInfo sceneInfo;
+	SceneInfo& sceneInfo    = SceneInfo::getInstance();
 	sceneInfo.init();
 	SceneData sceneData;
 
