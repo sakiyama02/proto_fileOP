@@ -12,6 +12,10 @@
 
 using namespace std;
 
+// ここの構造体はsystem.hに持っていく
+// uintなどを使っていない理由はコンパイルが通らなかったため
+// 結合時はそこでエラーがでるかも
+
 typedef struct GAIN_TAG {
 	float p;
 	float i;
